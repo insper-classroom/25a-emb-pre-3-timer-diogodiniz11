@@ -7,6 +7,7 @@ const int LED_PIN_R = 4;
 
 volatile int flag_f_r = 0;  
 volatile bool estado_led = false; 
+alarm_id_t long_press_alarm = -1;  
 
 int64_t long_press_callback(alarm_id_t id, void *user_data) {
     flag_f_r = 1;  
@@ -34,10 +35,7 @@ int main() {
     gpio_set_dir(BTN_PIN_R, GPIO_IN);
     gpio_pull_up(BTN_PIN_R);  
 
-
     gpio_set_irq_enabled_with_callback(BTN_PIN_R, GPIO_IRQ_EDGE_FALL | GPIO_IRQ_EDGE_RISE, true, &btn_callback);
-    alarm_id_t long_press_alarm = -1;  
-
 
     while (true) {
         if (flag_f_r) {
