@@ -11,7 +11,7 @@ alarm_id_t long_press_alarm = -1;
 
 int64_t long_press_callback(alarm_id_t id, void *user_data) {
     flag_f_r = 1;  
-    return 0;  e
+    return 0;  
 }
 
 void btn_callback(uint gpio, uint32_t events) {
