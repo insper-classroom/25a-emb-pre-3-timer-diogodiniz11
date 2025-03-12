@@ -41,8 +41,9 @@ int main() {
         if (flag_f_r) {
             flag_f_r = 0; 
 
-            estado_led = !estado_led;
+            estado_led = !estado_led; 
             gpio_put(LED_PIN_R, estado_led);  
         }
     }
 }
+ 
